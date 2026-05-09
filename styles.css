@@ -1,0 +1,145 @@
+* {
+    margin: 0 20px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root {
+  --border-color: #182f3c;
+  --background-color: #81c3d7;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aliceblue;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+#nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+    align-items: center;
+    margin: 10px;
+}
+
+#main {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 8px;
+    margin-top: 12px;
+}
+
+#intro, #about-me{
+    border: 2px solid var(--border-color);
+    margin:  8px;
+    border-radius: 14px;
+    background-color: var(--background-color);
+    animation: slide-in 1s ease-out;
+    padding: 1.2rem;
+}
+
+#nav-bar a {
+    text-decoration: none;
+    border: 2px solid var(--border-color);
+    margin: 8px;
+    border-radius: 6px;
+    background-color: var(--background-color);
+    padding: 4px;
+    color: black;
+    text-align: center;
+    
+}
+
+#welcome::first-letter {
+    font-size: 6rem;
+    color: #16425b;
+}
+
+h2::first-letter {
+    font-size: 3rem;
+    color: #16425b;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    margin-top: 2px;
+}
+
+progress {
+    width: 80%;
+    height: 20px;
+    color: var(--border-color);
+}
+
+#language {
+  display: flex;
+  width: 120px;
+  height: 120px;
+  border: 3px solid var(--border-color);
+  align-items: center;
+  border-radius: 19px;
+  flex-direction: column;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.4);
+  background-color: var(--background-color);
+
+}
+
+h2 {
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+#skills {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+#contact-me a{
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    background-color: var(--background-color);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px;
+    text-decoration: none;
+    color: var(--border-color);
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#contact-me a:hover, #language:hover, #intro:hover, #about-me:hover {
+    box-shadow: 0 0 8px rgba(68, 162, 167, 0.8);
+    
+    background-color: white;
+    border: #182f3c;
+}
+
+header nav a:hover {
+    background-color: rgb(247, 244, 244);
+    border: #3a799e;
+}
