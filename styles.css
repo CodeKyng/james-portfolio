@@ -1,9 +1,20 @@
 * {
-    margin: 0 20px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     border-radius: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f7fa;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -14,7 +25,7 @@
 
 header {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     background-color: aliceblue;
     position: sticky;
@@ -25,11 +36,10 @@ header {
 
 #nav-bar {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-end;
-    width: 50%;
     align-items: center;
-    margin: 10px;
+    gap: 12px;
 }
 
 #main {
@@ -37,6 +47,8 @@ header {
     background-color: aliceblue;
     padding: 8px;
     margin-top: 12px;
+    padding: 0 20px;
+
 }
 
 #intro, #about-me{
@@ -46,6 +58,12 @@ header {
     background-color: var(--background-color);
     animation: slide-in 1s ease-out;
     padding: 1.2rem;
+    height: 100vh;
+    width: min(100%, 1200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #nav-bar a {
@@ -83,7 +101,7 @@ progress {
     color: var(--border-color);
 }
 
-#language {
+.language {
   display: flex;
   width: 120px;
   height: 120px;
@@ -98,7 +116,8 @@ progress {
 
 h2 {
     margin-bottom: 10px;
-    text-decoration: underline;
+    text-decoration: underline;    padding-bottom: 30px;
+
 }
 
 #skills {
@@ -106,6 +125,9 @@ h2 {
   flex-direction: row;
   justify-content: space-around;
   margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+
 }
 
 #contact-me a{
@@ -123,7 +145,7 @@ h2 {
 
 @keyframes slide-in {
     0% {
-        transform: translateY(100%);
+        transform: translateY(40px);
         opacity: 0;
     }
     100% {
@@ -132,14 +154,125 @@ h2 {
     }
 }
 
-#contact-me a:hover, #language:hover, #intro:hover, #about-me:hover {
+#contact-me a:hover, .language:hover, #intro:hover, #about-me:hover {
     box-shadow: 0 0 8px rgba(68, 162, 167, 0.8);
-    
+    transition: all 0.3s ease;
     background-color: white;
-    border: #182f3c;
+    border-color: #182f3c;
 }
 
 header nav a:hover {
     background-color: rgb(247, 244, 244);
-    border: #3a799e;
+    border-color: #3a799e;
+}
+
+#view-project {
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    background-color: var(--background-color);
+    padding: 8px 16px;
+    color: var(--border-color);
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+#view-project:hover {
+    box-shadow: 0 0 8px rgba(68, 162, 167, 0.8);
+    background-color: white;
+    border: #182f3c;
+}
+
+footer {
+    text-align: center;
+    padding: 12px;
+    background-color: aliceblue;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    #nav-bar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #intro,
+    #about-me {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+    }
+
+    #skills {
+        justify-content: center;
+    }
+
+    #language {
+        width: 100px;
+        height: 100px;
+    }
+
+    #welcome::first-letter {
+        font-size: 4rem;
+    }
+
+    h2::first-letter {
+        font-size: 2rem;
+    }
+}
+
+#hire-me {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: var(--border-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+#hire-me:hover {
+    transform: translateY(-3px);
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: auto;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+section {
+    animation: fade-up 1s ease;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
